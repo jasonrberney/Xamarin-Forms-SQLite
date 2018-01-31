@@ -7,9 +7,14 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" x:Name="test" Activated="ToolbarItem_Activated"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    
-	<Label Text="Welcome to MyBooks" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+
+    <ListView x:Name="booksListView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Author}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>
