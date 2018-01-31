@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-
+using Windows.Storage;
 using Xamarin.Forms;
 
 namespace MyBooks
@@ -13,6 +14,10 @@ namespace MyBooks
 		public App ()
 		{
 			InitializeComponent();
+
+            string fileName = "books_db.sqlite";
+            string fileLocation = Path.Combine(ApplicationData.Current.LocalFolder.Path, fileName);
+            DB_PATH = fileLocation;
 
             MainPage = new NavigationPage(new MainPage());
 		}
